@@ -1,0 +1,445 @@
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+    background-color: #E3E7E8;
+    font-family: system-ui;
+}
+.container{
+    width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+   
+}
+#menu-icon{
+    color: var(--bg-color);
+    font-size: 24px;
+    z-index:100001;
+    cursor: pointer;
+    display: none;
+    position: center;
+}
+
+
+header {
+	background-color: rgb(62, 62, 62);
+	color: #fff;
+	padding: 0;
+    display: flex;
+	z-index: 1;
+	position: sticky;
+	top:0;
+}
+
+header h1 {
+	margin-right: 620px;
+    margin-left: 50px;
+	font-size: 30px;
+	color: rgb(255, 127, 127);
+
+
+}
+header h1:hover{
+	color: rgb(255, 127, 127);
+	transform: scale(1.3);
+	transition: all .5s;
+	cursor: pointer;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 18px;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+	
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	
+}
+nav ul li a:hover{
+	background-color: white;
+	color: #333;
+	box-shadow: 0 3px 10px white;
+	transition: all .5s;
+	cursor: pointer;
+}
+
+header .shopping{
+    position: relative;
+    text-align: right;
+}
+header .shopping img{
+    width: 30px;
+    color: #fff;
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -15px;
+    left: 80%;
+    padding: 3px 10px;
+}
+.banner {
+	background-image: url(img/banner.jpg);
+	background-size:contain;
+	height:450px;
+	background-position: center;
+	color: #fff;
+	text-align: center;
+	padding: 100px 0;
+}
+
+.banner h2 {
+	margin: 3px;
+	font-size: 52px;
+	font-family:'Arial Narrow Bold';
+}
+.banner h2:hover{
+	color: rgb(255, 127, 127);
+	transform: scale(1.3);
+	transition: all .5s;
+	cursor: pointer;
+}
+
+.banner p {
+	font-size: 26px;
+	margin-bottom: 50px;
+}
+.banner p:hover{
+	color: rgb(127, 253, 255);
+	transform: scale(1.3);
+	transition: all .5s;
+	cursor: pointer;
+}
+.btn{
+	padding: 10px 35px;
+	background-color: transparent;
+	border: 1px solid white;
+	color: white;
+	outline: none;
+	transition: .6s ease;
+}
+.btn:hover{
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+	font-weight: bold;
+}
+.shoph1{
+    text-align: center;
+    color: #007b93;
+    font-family: 'Arial Narrow Bold';
+    font-size: 50px;
+}
+
+.list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-top: 70px;
+    margin-bottom: 20%;
+    grid-row: auto;
+}
+.list .item:hover{
+    transform: translate(-5px);
+	box-shadow: 0 5px 15px rgba(2, 165, 190, 0.3);
+}
+
+.list .item{
+    text-align: center;
+    background-color: #DCE0E1;
+    padding: 20px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+}
+.list .item img{
+    width: 90%;
+    height: 230px;
+}
+.list .item .title{
+    font-weight: 600;
+}
+.list .item .txt{
+    font-weight: 400;
+}
+.list .item .price{
+    margin: 10px;
+    font-weight: 700;
+    cursor: grab;
+}
+.list .item button{
+    background-color: #27ae60;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all .5s;
+	font-weight: bold;
+}
+.list .item button:hover{
+    color: rgb(0, 0, 0);
+	transform: scale(1.3);
+}
+
+.card{
+    position: fixed;
+    top: 12%;
+    left: 100%;
+    width: 30%;
+    background-color: rgb(62, 62, 62);
+    height: 82%;
+    transition: 0.5s;
+}
+.active .card{
+    left: calc(100% - 400px);
+}
+.active .container{
+   transform: translateX(-200px);
+}
+.card h1{
+    color: #E8BC0E;
+    font-weight: 500;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.card .checkOut{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut div{
+    background-color: #0ec4e8;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #1C1F25;
+    color: #fff;
+    cursor: pointer;
+}
+.card .closeShopping{
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(2, 5fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+.listCard li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
+.shopping:hover{
+	cursor: pointer;
+    
+}
+
+.info{
+	background-color: #aaa;
+}
+.info-bg{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+	gap: 2rem;
+	font-size: small;
+	padding: 0;
+	text-align: center;
+    
+}
+.info-bg h3{
+	color: rgb(127, 1, 1);
+	font-size: 15px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.info-bg p{
+	color: rgb(0, 0, 0);
+	font-size: small;
+	font-weight: 400;
+	text-transform: capitalize;
+	line-height: 1;
+	margin-bottom: 3px;
+	cursor: pointer;
+	transition: all .5s;
+}
+.info-bg p:hover{
+	color: crimson;
+	transform: scale(1.5);
+}
+	
+#contacts{
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+		background-color: #333;
+		color: antiquewhite;
+		margin: 80px;
+		
+	}
+	
+.form{
+	display: flex;
+	flex-direction: column;
+	box-sizing:border-box;
+	align-items: center;
+	margin: 20px 0px;
+}
+
+
+.input{
+	padding: 10px;
+	margin: 15px;
+	width: 20%;
+	border:none;
+	outline:none;
+}
+
+
+#msg{
+	width: 20%;
+	padding: 10px;
+	margin: 10px;
+	border:none;
+	outline: none;
+}
+#msg:hover{
+	cursor:text;
+	box-shadow:aqua;
+	transform: scale(1.3);
+	transition: all .5s;
+}
+.h1{
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Times New Roman';
+	
+}
+#send{
+	padding: 5px;
+	width: 8%;
+	margin: 10px;
+	border: none;
+	outline: none;
+	text-align: center;
+	font-style: bold;
+}
+#send:hover{
+	cursor: pointer;
+	box-shadow:aqua;
+	color: rgb(186, 0, 0);
+	transform: scale(1.3);
+	transition: all .5s;
+
+}
+.foter{
+	
+	text-align: center;
+	color: rgb(125, 32, 32);
+	font-size: smaller;
+}
+
+
+@media only screen and (max-width: 750px){
+    nav{
+        padding:0;
+    }
+       
+    header h1{
+        position: absolute;
+        text-align: center;
+    }
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+     
+    }
+    nav li{
+        margin: 30px auto;
+    }
+}
+
+	@media (max-width: 768px){
+		header {
+				padding: 12px 4%;
+				display: flex;
+				align-items: center;
+				}
+		#menu-icon {
+				display: initial;
+			}
+		nav {
+			position: absolute;
+			top: -970px;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			background: rgb(62, 62, 62);
+			padding: 20px;
+			transition: 0.3s;
+			text-align: center;
+			}
+			header h1{
+				position: absolute;
+				text-align: center;
+			}
+		nav a {
+			color: white;
+		}
+		nav a:hover {
+			color: var(--bg-color);
+			}
+		nav.active{
+			top: 100%;
+}
+	}
